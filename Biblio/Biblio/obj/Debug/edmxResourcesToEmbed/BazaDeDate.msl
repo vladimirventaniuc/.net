@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BazaDeDateStoreContainer" CdmEntityContainer="BazaDeDateContainer">
+    <EntitySetMapping Name="GenSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Gen)">
+        <MappingFragment StoreEntitySet="GenSet">
+          <ScalarProperty Name="GenId" ColumnName="GenId" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Autor)">
+        <MappingFragment StoreEntitySet="AutorSet">
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Carte)">
+        <MappingFragment StoreEntitySet="CarteSet">
+          <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+          <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImprumutSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Imprumut)">
+        <MappingFragment StoreEntitySet="ImprumutSet">
+          <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId" />
+          <ScalarProperty Name="DataImprumut" ColumnName="DataImprumut" />
+          <ScalarProperty Name="DataScadenta" ColumnName="DataScadenta" />
+          <ScalarProperty Name="DataRestituire" ColumnName="DataRestituire" />
+          <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CititorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Cititor)">
+        <MappingFragment StoreEntitySet="CititorSet">
+          <ScalarProperty Name="CitirorId" ColumnName="CitirorId" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Stare" ColumnName="Stare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReviewSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Review)">
+        <MappingFragment StoreEntitySet="ReviewSet">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CarteAutor" TypeName="BazaDeDate.CarteAutor" StoreEntitySet="CarteSet">
+      <EndProperty Name="Autor">
+        <ScalarProperty Name="AutorId" ColumnName="Autor_AutorId" />
+      </EndProperty>
+      <EndProperty Name="Carte">
+        <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImprumutCititor" TypeName="BazaDeDate.ImprumutCititor" StoreEntitySet="ImprumutSet">
+      <EndProperty Name="Cititor">
+        <ScalarProperty Name="CitirorId" ColumnName="CititorId_CitirorId" />
+      </EndProperty>
+      <EndProperty Name="Imprumut">
+        <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReviewImprumut" TypeName="BazaDeDate.ReviewImprumut" StoreEntitySet="ReviewSet">
+      <EndProperty Name="Imprumut">
+        <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId_ImprumutId" />
+      </EndProperty>
+      <EndProperty Name="Review">
+        <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CarteGen" TypeName="BazaDeDate.CarteGen" StoreEntitySet="CarteSet">
+      <EndProperty Name="Gen">
+        <ScalarProperty Name="GenId" ColumnName="GenId_GenId" />
+      </EndProperty>
+      <EndProperty Name="Carte">
+        <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

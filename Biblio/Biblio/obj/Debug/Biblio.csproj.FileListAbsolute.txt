@@ -1,0 +1,11 @@
+C:\Users\Vladimir\source\repos\Biblio\Biblio\bin\Debug\Biblio.dll.config
+C:\Users\Vladimir\source\repos\Biblio\Biblio\bin\Debug\Biblio.dll
+C:\Users\Vladimir\source\repos\Biblio\Biblio\bin\Debug\Biblio.pdb
+C:\Users\Vladimir\source\repos\Biblio\Biblio\bin\Debug\EntityFramework.dll
+C:\Users\Vladimir\source\repos\Biblio\Biblio\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Vladimir\source\repos\Biblio\Biblio\bin\Debug\EntityFramework.xml
+C:\Users\Vladimir\source\repos\Biblio\Biblio\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Vladimir\source\repos\Biblio\Biblio\obj\Debug\Biblio.csprojResolveAssemblyReference.cache
+C:\Users\Vladimir\source\repos\Biblio\Biblio\obj\Debug\Biblio.csproj.CoreCompileInputs.cache
+C:\Users\Vladimir\source\repos\Biblio\Biblio\obj\Debug\Biblio.dll
+C:\Users\Vladimir\source\repos\Biblio\Biblio\obj\Debug\Biblio.pdb

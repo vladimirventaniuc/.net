@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BazaDeDate.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="BazaDeDateStoreContainer">
+    <EntitySet Name="GenSet" EntityType="BazaDeDate.Store.GenSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AutorSet" EntityType="BazaDeDate.Store.AutorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CarteSet" EntityType="BazaDeDate.Store.CarteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ImprumutSet" EntityType="BazaDeDate.Store.ImprumutSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CititorSet" EntityType="BazaDeDate.Store.CititorSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ReviewSet" EntityType="BazaDeDate.Store.ReviewSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="CarteAutor" Association="BazaDeDate.Store.CarteAutor">
+      <End Role="Carte" EntitySet="CarteSet" />
+      <End Role="Autor" EntitySet="AutorSet" />
+    </AssociationSet>
+    <AssociationSet Name="ImprumutCititor" Association="BazaDeDate.Store.ImprumutCititor">
+      <End Role="Imprumut" EntitySet="ImprumutSet" />
+      <End Role="Cititor" EntitySet="CititorSet" />
+    </AssociationSet>
+    <AssociationSet Name="ReviewImprumut" Association="BazaDeDate.Store.ReviewImprumut">
+      <End Role="Review" EntitySet="ReviewSet" />
+      <End Role="Imprumut" EntitySet="ImprumutSet" />
+    </AssociationSet>
+    <AssociationSet Name="CarteGen" Association="BazaDeDate.Store.CarteGen">
+      <End Role="Carte" EntitySet="CarteSet" />
+      <End Role="Gen" EntitySet="GenSet" />
+    </AssociationSet>
+    <AssociationSet Name="ImprumutId" Association="BazaDeDate.Store.ImprumutId">
+      <End Role="Carte" EntitySet="CarteSet" />
+      <End Role="Imprumut" EntitySet="ImprumutSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="GenSet">
+    <Key>
+      <PropertyRef Name="GenId" />
+    </Key>
+    <Property Name="GenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descriere" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AutorSet">
+    <Key>
+      <PropertyRef Name="AutorId" />
+    </Key>
+    <Property Name="AutorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nvarchar" Nullable="false" MaxLength="20" />
+    <Property Name="Prenume" Type="nvarchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CarteSet">
+    <Key>
+      <PropertyRef Name="CarteId" />
+    </Key>
+    <Property Name="CarteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Titlu" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="AutorId" Type="int" Nullable="false" />
+    <Property Name="Autor_AutorId" Type="int" Nullable="false" />
+    <Property Name="GenId_GenId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ImprumutSet">
+    <Key>
+      <PropertyRef Name="ImprumutId" />
+    </Key>
+    <Property Name="ImprumutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataImprumut" Type="datetime" Nullable="false" />
+    <Property Name="DataScadenta" Type="datetime" Nullable="false" />
+    <Property Name="DataRestituire" Type="datetime" Nullable="false" />
+    <Property Name="CarteId" Type="int" Nullable="false" />
+    <Property Name="CititorId_CitirorId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CititorSet">
+    <Key>
+      <PropertyRef Name="CitirorId" />
+    </Key>
+    <Property Name="CitirorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Prenume" Type="nvarchar" Nullable="false" MaxLength="15" />
+    <Property Name="Adresa" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Stare" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReviewSet">
+    <Key>
+      <PropertyRef Name="ReviewId" />
+    </Key>
+    <Property Name="ReviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ImprumutId_ImprumutId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="CarteAutor">
+    <End Role="Carte" Type="BazaDeDate.Store.CarteSet" Multiplicity="*" />
+    <End Role="Autor" Type="BazaDeDate.Store.AutorSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Autor">
+        <PropertyRef Name="AutorId" />
+      </Principal>
+      <Dependent Role="Carte">
+        <PropertyRef Name="Autor_AutorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImprumutCititor">
+    <End Role="Imprumut" Type="BazaDeDate.Store.ImprumutSet" Multiplicity="*" />
+    <End Role="Cititor" Type="BazaDeDate.Store.CititorSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Cititor">
+        <PropertyRef Name="CitirorId" />
+      </Principal>
+      <Dependent Role="Imprumut">
+        <PropertyRef Name="CititorId_CitirorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ReviewImprumut">
+    <End Role="Review" Type="BazaDeDate.Store.ReviewSet" Multiplicity="*" />
+    <End Role="Imprumut" Type="BazaDeDate.Store.ImprumutSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Imprumut">
+        <PropertyRef Name="ImprumutId" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="ImprumutId_ImprumutId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CarteGen">
+    <End Role="Carte" Type="BazaDeDate.Store.CarteSet" Multiplicity="*" />
+    <End Role="Gen" Type="BazaDeDate.Store.GenSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Gen">
+        <PropertyRef Name="GenId" />
+      </Principal>
+      <Dependent Role="Carte">
+        <PropertyRef Name="GenId_GenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ImprumutId">
+    <End Role="Carte" Type="BazaDeDate.Store.CarteSet" Multiplicity="1" />
+    <End Role="Imprumut" Type="BazaDeDate.Store.ImprumutSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Carte">
+        <PropertyRef Name="CarteId" />
+      </Principal>
+      <Dependent Role="Imprumut">
+        <PropertyRef Name="CarteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BazaDeDate" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="BazaDeDateContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GenSet" EntityType="BazaDeDate.Gen" />
+          <EntitySet Name="AutorSet" EntityType="BazaDeDate.Autor" />
+          <EntitySet Name="CarteSet" EntityType="BazaDeDate.Carte" />
+          <EntitySet Name="ImprumutSet" EntityType="BazaDeDate.Imprumut" />
+          <EntitySet Name="CititorSet" EntityType="BazaDeDate.Cititor" />
+          <EntitySet Name="ReviewSet" EntityType="BazaDeDate.Review" />
+          <AssociationSet Name="CarteAutor" Association="BazaDeDate.CarteAutor">
+            <End Role="Carte" EntitySet="CarteSet" />
+            <End Role="Autor" EntitySet="AutorSet" />
+          </AssociationSet>
+          <AssociationSet Name="ImprumutCititor" Association="BazaDeDate.ImprumutCititor">
+            <End Role="Imprumut" EntitySet="ImprumutSet" />
+            <End Role="Cititor" EntitySet="CititorSet" />
+          </AssociationSet>
+          <AssociationSet Name="ReviewImprumut" Association="BazaDeDate.ReviewImprumut">
+            <End Role="Review" EntitySet="ReviewSet" />
+            <End Role="Imprumut" EntitySet="ImprumutSet" />
+          </AssociationSet>
+          <AssociationSet Name="CarteGen" Association="BazaDeDate.CarteGen">
+            <End Role="Carte" EntitySet="CarteSet" />
+            <End Role="Gen" EntitySet="GenSet" />
+          </AssociationSet>
+          <AssociationSet Name="ImprumutId" Association="BazaDeDate.ImprumutId">
+            <End Role="Carte" EntitySet="CarteSet" />
+            <End Role="Imprumut" EntitySet="ImprumutSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Gen">
+          <Key>
+            <PropertyRef Name="GenId" />
+          </Key>
+          <Property Name="GenId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descriere" Type="String" Nullable="false" />
+          <NavigationProperty Name="Carte" Relationship="BazaDeDate.CarteGen" FromRole="Gen" ToRole="Carte" />
+        </EntityType>
+        <EntityType Name="Autor">
+          <Key>
+            <PropertyRef Name="AutorId" />
+          </Key>
+          <Property Name="AutorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" Nullable="false" MaxLength="20" />
+          <Property Name="Prenume" Type="String" Nullable="false" MaxLength="20" />
+          <NavigationProperty Name="CarteId" Relationship="BazaDeDate.CarteAutor" FromRole="Autor" ToRole="Carte" />
+        </EntityType>
+        <EntityType Name="Carte">
+          <Key>
+            <PropertyRef Name="CarteId" />
+          </Key>
+          <Property Name="CarteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titlu" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="AutorId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Autor" Relationship="BazaDeDate.CarteAutor" FromRole="Carte" ToRole="Autor" />
+          <NavigationProperty Name="GenId" Relationship="BazaDeDate.CarteGen" FromRole="Carte" ToRole="Gen" />
+        </EntityType>
+        <EntityType Name="Imprumut">
+          <Key>
+            <PropertyRef Name="ImprumutId" />
+          </Key>
+          <Property Name="ImprumutId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataImprumut" Type="DateTime" Nullable="false" />
+          <Property Name="DataScadenta" Type="DateTime" Nullable="false" />
+          <Property Name="DataRestituire" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="CititorId" Relationship="BazaDeDate.ImprumutCititor" FromRole="Imprumut" ToRole="Cititor" />
+          <NavigationProperty Name="Review" Relationship="BazaDeDate.ReviewImprumut" FromRole="Imprumut" ToRole="Review" />
+          <Property Name="CarteId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Cititor">
+          <Key>
+            <PropertyRef Name="CitirorId" />
+          </Key>
+          <Property Name="CitirorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nume" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Prenume" Type="String" Nullable="false" MaxLength="15" />
+          <Property Name="Adresa" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" />
+          <Property Name="Stare" Type="Int16" Nullable="false" />
+          <NavigationProperty Name="Imprumut" Relationship="BazaDeDate.ImprumutCititor" FromRole="Cititor" ToRole="Imprumut" />
+        </EntityType>
+        <EntityType Name="Review">
+          <Key>
+            <PropertyRef Name="ReviewId" />
+          </Key>
+          <Property Name="ReviewId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Text" Type="String" Nullable="false" MaxLength="4096" />
+          <NavigationProperty Name="ImprumutId" Relationship="BazaDeDate.ReviewImprumut" FromRole="Review" ToRole="Imprumut" />
+        </EntityType>
+        <Association Name="CarteAutor">
+          <End Type="BazaDeDate.Carte" Role="Carte" Multiplicity="*" />
+          <End Type="BazaDeDate.Autor" Role="Autor" Multiplicity="1" />
+        </Association>
+        <Association Name="ImprumutCititor">
+          <End Type="BazaDeDate.Imprumut" Role="Imprumut" Multiplicity="1" />
+          <End Type="BazaDeDate.Cititor" Role="Cititor" Multiplicity="1" />
+        </Association>
+        <Association Name="ReviewImprumut">
+          <End Type="BazaDeDate.Review" Role="Review" Multiplicity="1" />
+          <End Type="BazaDeDate.Imprumut" Role="Imprumut" Multiplicity="1" />
+        </Association>
+        <Association Name="CarteGen">
+          <End Type="BazaDeDate.Carte" Role="Carte" Multiplicity="*" />
+          <End Type="BazaDeDate.Gen" Role="Gen" Multiplicity="1" />
+        </Association>
+        <Association Name="ImprumutId">
+          <End Type="BazaDeDate.Carte" Role="Carte" Multiplicity="1" />
+          <End Type="BazaDeDate.Imprumut" Role="Imprumut" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Carte">
+              <PropertyRef Name="CarteId" />
+            </Principal>
+            <Dependent Role="Imprumut">
+              <PropertyRef Name="CarteId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BazaDeDateStoreContainer" CdmEntityContainer="BazaDeDateContainer">
+    <EntitySetMapping Name="GenSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Gen)">
+        <MappingFragment StoreEntitySet="GenSet">
+          <ScalarProperty Name="GenId" ColumnName="GenId" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Autor)">
+        <MappingFragment StoreEntitySet="AutorSet">
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CarteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Carte)">
+        <MappingFragment StoreEntitySet="CarteSet">
+          <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+          <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ImprumutSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Imprumut)">
+        <MappingFragment StoreEntitySet="ImprumutSet">
+          <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId" />
+          <ScalarProperty Name="DataImprumut" ColumnName="DataImprumut" />
+          <ScalarProperty Name="DataScadenta" ColumnName="DataScadenta" />
+          <ScalarProperty Name="DataRestituire" ColumnName="DataRestituire" />
+          <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CititorSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Cititor)">
+        <MappingFragment StoreEntitySet="CititorSet">
+          <ScalarProperty Name="CitirorId" ColumnName="CitirorId" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Stare" ColumnName="Stare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReviewSet">
+      <EntityTypeMapping TypeName="IsTypeOf(BazaDeDate.Review)">
+        <MappingFragment StoreEntitySet="ReviewSet">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CarteAutor" TypeName="BazaDeDate.CarteAutor" StoreEntitySet="CarteSet">
+      <EndProperty Name="Autor">
+        <ScalarProperty Name="AutorId" ColumnName="Autor_AutorId" />
+      </EndProperty>
+      <EndProperty Name="Carte">
+        <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ImprumutCititor" TypeName="BazaDeDate.ImprumutCititor" StoreEntitySet="ImprumutSet">
+      <EndProperty Name="Cititor">
+        <ScalarProperty Name="CitirorId" ColumnName="CititorId_CitirorId" />
+      </EndProperty>
+      <EndProperty Name="Imprumut">
+        <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ReviewImprumut" TypeName="BazaDeDate.ReviewImprumut" StoreEntitySet="ReviewSet">
+      <EndProperty Name="Imprumut">
+        <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId_ImprumutId" />
+      </EndProperty>
+      <EndProperty Name="Review">
+        <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CarteGen" TypeName="BazaDeDate.CarteGen" StoreEntitySet="CarteSet">
+      <EndProperty Name="Gen">
+        <ScalarProperty Name="GenId" ColumnName="GenId_GenId" />
+      </EndProperty>
+      <EndProperty Name="Carte">
+        <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

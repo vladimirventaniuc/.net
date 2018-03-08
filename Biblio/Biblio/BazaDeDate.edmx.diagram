@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="68f07269552445b8bdae9bdc052d479d" Name="Diagram1" >
+        <EntityTypeShape EntityType="BazaDeDate.Gen" Width="1.5" PointX="7.625" PointY="1.375" />
+        <EntityTypeShape EntityType="BazaDeDate.Autor" Width="1.5" PointX="4.5" PointY="1.25" />
+        <EntityTypeShape EntityType="BazaDeDate.Carte" Width="2.625" PointX="0.625" PointY="0.5" />
+        <EntityTypeShape EntityType="BazaDeDate.Imprumut" Width="1.5" PointX="0.875" PointY="4.125" />
+        <EntityTypeShape EntityType="BazaDeDate.Cititor" Width="1.5" PointX="4.5" PointY="3.625" />
+        <EntityTypeShape EntityType="BazaDeDate.Review" Width="1.5" PointX="7.75" PointY="3.5" />
+        <AssociationConnector Association="BazaDeDate.CarteAutor" />
+        <AssociationConnector Association="BazaDeDate.ImprumutCititor" />
+        <AssociationConnector Association="BazaDeDate.ReviewImprumut" />
+        <AssociationConnector Association="BazaDeDate.CarteGen" />
+        <AssociationConnector Association="BazaDeDate.ImprumutId" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

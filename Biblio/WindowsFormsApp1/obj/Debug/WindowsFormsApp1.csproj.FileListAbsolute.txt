@@ -1,0 +1,16 @@
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csprojResolveAssemblyReference.cache
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.GenerateResource.Cache
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.csproj.CoreCompileInputs.cache
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Form1.resources
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.CititorNou.resources
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AchizitieCarti.resources
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Biblioteca.resources
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Cititor.resources
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.LoginCititor.resources
+C:\Users\Vladimir\source\repos\Biblio\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Imprumut.resources
