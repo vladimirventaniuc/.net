@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="093d88204f3a4d1bba6cb7044ca6197d" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="BTESTModel.AUTOR" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTESTModel.CARTE" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTESTModel.CITITOR" Width="1.5" PointX="3.75" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTESTModel.GEN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTESTModel.IMPRUMUT" Width="1.5" PointX="6" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BTESTModel.REVIEW" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <AssociationConnector Association="BTESTModel.FK__CARTE__AutorId__276EDEB3" ManuallyRouted="false" />
+        <AssociationConnector Association="BTESTModel.FK__IMPRUMUT__CarteI__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="BTESTModel.FK__CARTE__Gen__286302EC" ManuallyRouted="false" />
+        <AssociationConnector Association="BTESTModel.FK__IMPRUMUT__Citito__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="BTESTModel.FK__REVIEW__Imprumut__31EC6D26" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

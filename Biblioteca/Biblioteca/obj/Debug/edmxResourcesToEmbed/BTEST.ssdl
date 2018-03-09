@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BTESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AUTOR">
+    <Key>
+      <PropertyRef Name="AutorId" />
+    </Key>
+    <Property Name="AutorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nvarchar" MaxLength="20" />
+    <Property Name="Prenume" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="CARTE">
+    <Key>
+      <PropertyRef Name="CarteId" />
+    </Key>
+    <Property Name="CarteId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AutorId" Type="int" />
+    <Property Name="Titlu" Type="nvarchar" MaxLength="50" />
+    <Property Name="GenId" Type="int" />
+  </EntityType>
+  <EntityType Name="CITITOR">
+    <Key>
+      <PropertyRef Name="CititorId" />
+    </Key>
+    <Property Name="CititorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nume" Type="nvarchar" MaxLength="15" />
+    <Property Name="Prenume" Type="nvarchar" MaxLength="15" />
+    <Property Name="Adresa" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Stare" Type="bit" />
+  </EntityType>
+  <EntityType Name="GEN">
+    <Key>
+      <PropertyRef Name="GenId" />
+    </Key>
+    <Property Name="GenId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descriere" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="IMPRUMUT">
+    <Key>
+      <PropertyRef Name="ImprumutId" />
+    </Key>
+    <Property Name="ImprumutId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CarteId" Type="int" />
+    <Property Name="CititorId" Type="int" />
+    <Property Name="DataImprumut" Type="date" Nullable="false" />
+    <Property Name="DataScadenta" Type="date" Nullable="false" />
+    <Property Name="DataRestituire" Type="date" />
+  </EntityType>
+  <EntityType Name="REVIEW">
+    <Key>
+      <PropertyRef Name="ReviewId" />
+    </Key>
+    <Property Name="ReviewId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ImprumutId" Type="int" />
+    <Property Name="Text" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK__CARTE__AutorId__276EDEB3">
+    <End Role="AUTOR" Type="Self.AUTOR" Multiplicity="0..1" />
+    <End Role="CARTE" Type="Self.CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AUTOR">
+        <PropertyRef Name="AutorId" />
+      </Principal>
+      <Dependent Role="CARTE">
+        <PropertyRef Name="AutorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__CARTE__Gen__286302EC">
+    <End Role="GEN" Type="Self.GEN" Multiplicity="0..1" />
+    <End Role="CARTE" Type="Self.CARTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GEN">
+        <PropertyRef Name="GenId" />
+      </Principal>
+      <Dependent Role="CARTE">
+        <PropertyRef Name="GenId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IMPRUMUT__CarteI__2E1BDC42">
+    <End Role="AUTOR" Type="Self.AUTOR" Multiplicity="0..1" />
+    <End Role="IMPRUMUT" Type="Self.IMPRUMUT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AUTOR">
+        <PropertyRef Name="AutorId" />
+      </Principal>
+      <Dependent Role="IMPRUMUT">
+        <PropertyRef Name="CarteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__IMPRUMUT__Citito__2F10007B">
+    <End Role="CITITOR" Type="Self.CITITOR" Multiplicity="0..1" />
+    <End Role="IMPRUMUT" Type="Self.IMPRUMUT" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CITITOR">
+        <PropertyRef Name="CititorId" />
+      </Principal>
+      <Dependent Role="IMPRUMUT">
+        <PropertyRef Name="CititorId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__REVIEW__Imprumut__31EC6D26">
+    <End Role="IMPRUMUT" Type="Self.IMPRUMUT" Multiplicity="0..1" />
+    <End Role="REVIEW" Type="Self.REVIEW" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IMPRUMUT">
+        <PropertyRef Name="ImprumutId" />
+      </Principal>
+      <Dependent Role="REVIEW">
+        <PropertyRef Name="ImprumutId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BTESTModelStoreContainer">
+    <EntitySet Name="AUTOR" EntityType="Self.AUTOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CARTE" EntityType="Self.CARTE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CITITOR" EntityType="Self.CITITOR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GEN" EntityType="Self.GEN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IMPRUMUT" EntityType="Self.IMPRUMUT" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="REVIEW" EntityType="Self.REVIEW" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__CARTE__AutorId__276EDEB3" Association="Self.FK__CARTE__AutorId__276EDEB3">
+      <End Role="AUTOR" EntitySet="AUTOR" />
+      <End Role="CARTE" EntitySet="CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__CARTE__Gen__286302EC" Association="Self.FK__CARTE__Gen__286302EC">
+      <End Role="GEN" EntitySet="GEN" />
+      <End Role="CARTE" EntitySet="CARTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IMPRUMUT__CarteI__2E1BDC42" Association="Self.FK__IMPRUMUT__CarteI__2E1BDC42">
+      <End Role="AUTOR" EntitySet="AUTOR" />
+      <End Role="IMPRUMUT" EntitySet="IMPRUMUT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__IMPRUMUT__Citito__2F10007B" Association="Self.FK__IMPRUMUT__Citito__2F10007B">
+      <End Role="CITITOR" EntitySet="CITITOR" />
+      <End Role="IMPRUMUT" EntitySet="IMPRUMUT" />
+    </AssociationSet>
+    <AssociationSet Name="FK__REVIEW__Imprumut__31EC6D26" Association="Self.FK__REVIEW__Imprumut__31EC6D26">
+      <End Role="IMPRUMUT" EntitySet="IMPRUMUT" />
+      <End Role="REVIEW" EntitySet="REVIEW" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

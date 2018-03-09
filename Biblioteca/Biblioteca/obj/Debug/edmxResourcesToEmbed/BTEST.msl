@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BTESTModelStoreContainer" CdmEntityContainer="BTESTEntities">
+    <EntitySetMapping Name="AUTOR">
+      <EntityTypeMapping TypeName="BTESTModel.AUTOR">
+        <MappingFragment StoreEntitySet="AUTOR">
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CARTE">
+      <EntityTypeMapping TypeName="BTESTModel.CARTE">
+        <MappingFragment StoreEntitySet="CARTE">
+          <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+          <ScalarProperty Name="AutorId" ColumnName="AutorId" />
+          <ScalarProperty Name="Titlu" ColumnName="Titlu" />
+          <ScalarProperty Name="GenId" ColumnName="GenId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CITITOR">
+      <EntityTypeMapping TypeName="BTESTModel.CITITOR">
+        <MappingFragment StoreEntitySet="CITITOR">
+          <ScalarProperty Name="CititorId" ColumnName="CititorId" />
+          <ScalarProperty Name="Nume" ColumnName="Nume" />
+          <ScalarProperty Name="Prenume" ColumnName="Prenume" />
+          <ScalarProperty Name="Adresa" ColumnName="Adresa" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Stare" ColumnName="Stare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GEN">
+      <EntityTypeMapping TypeName="BTESTModel.GEN">
+        <MappingFragment StoreEntitySet="GEN">
+          <ScalarProperty Name="GenId" ColumnName="GenId" />
+          <ScalarProperty Name="Descriere" ColumnName="Descriere" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IMPRUMUT">
+      <EntityTypeMapping TypeName="BTESTModel.IMPRUMUT">
+        <MappingFragment StoreEntitySet="IMPRUMUT">
+          <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId" />
+          <ScalarProperty Name="CarteId" ColumnName="CarteId" />
+          <ScalarProperty Name="CititorId" ColumnName="CititorId" />
+          <ScalarProperty Name="DataImprumut" ColumnName="DataImprumut" />
+          <ScalarProperty Name="DataScadenta" ColumnName="DataScadenta" />
+          <ScalarProperty Name="DataRestituire" ColumnName="DataRestituire" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="REVIEW">
+      <EntityTypeMapping TypeName="BTESTModel.REVIEW">
+        <MappingFragment StoreEntitySet="REVIEW">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="ImprumutId" ColumnName="ImprumutId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

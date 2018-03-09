@@ -1,0 +1,11 @@
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\bin\Debug\Biblioteca.dll.config
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\bin\Debug\Biblioteca.dll
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\bin\Debug\Biblioteca.pdb
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\bin\Debug\EntityFramework.dll
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\bin\Debug\EntityFramework.SqlServer.dll
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\bin\Debug\EntityFramework.xml
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\bin\Debug\EntityFramework.SqlServer.xml
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\obj\Debug\Biblioteca.API.csprojResolveAssemblyReference.cache
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\obj\Debug\Biblioteca.API.csproj.CoreCompileInputs.cache
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\obj\Debug\Biblioteca.dll
+c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
