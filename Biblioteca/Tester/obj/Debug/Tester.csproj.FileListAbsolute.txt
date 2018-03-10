@@ -1,0 +1,12 @@
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\Tester.exe.config
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\Tester.exe
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\Tester.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\Biblioteca.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\EntityFramework.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\Biblioteca.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\Biblioteca.dll.config
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\EntityFramework.xml
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.csproj.CoreCompileInputs.cache
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.exe
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.pdb

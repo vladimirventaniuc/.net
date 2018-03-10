@@ -3,3 +3,8 @@ c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca
 c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca.Database\bin\Debug\Biblioteca.Database.pdb
 c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca.Database\obj\Debug\Biblioteca.Database.dll
 c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca.Database\obj\Debug\Biblioteca.Database.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca.Database\bin\Debug\BTEST.dacpac
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca.Database\bin\Debug\Biblioteca.Database.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca.Database\bin\Debug\Biblioteca.Database.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca.Database\obj\Debug\Biblioteca.Database.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca.Database\obj\Debug\Biblioteca.Database.pdb

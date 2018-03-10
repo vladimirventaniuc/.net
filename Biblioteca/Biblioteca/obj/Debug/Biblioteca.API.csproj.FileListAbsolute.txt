@@ -9,3 +9,14 @@ c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca
 c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\obj\Debug\Biblioteca.API.csproj.CoreCompileInputs.cache
 c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\obj\Debug\Biblioteca.dll
 c:\users\stefan.jora\documents\visual studio 2017\Projects\Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\obj\Debug\Biblioteca.API.csprojResolveAssemblyReference.cache
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\obj\Debug\Biblioteca.API.csproj.CoreCompileInputs.cache
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\obj\Debug\Biblioteca.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\obj\Debug\Biblioteca.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\bin\Debug\Biblioteca.dll.config
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\bin\Debug\Biblioteca.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\bin\Debug\Biblioteca.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\bin\Debug\EntityFramework.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\bin\Debug\EntityFramework.xml
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Biblioteca\bin\Debug\EntityFramework.SqlServer.xml

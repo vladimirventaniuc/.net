@@ -33,10 +33,14 @@ namespace Biblioteca.API
             Console.WriteLine("2.Achizitie carte.");
             Console.WriteLine("3.Imprumutare carte.");
             Console.WriteLine("4.Restituire carte.");
-            Console.WriteLine("5.Statistici.");
-            Console.WriteLine("6.Adaugare cititor.");
-            Console.WriteLine("7.Query direct.");
-            Console.WriteLine("0.Iesire.");
+            Console.WriteLine("5.Numarul de cititori si care sunt acestia intr-o perioada data.");
+            Console.WriteLine("6.Cele mai solicitate carti (top 5).");
+            Console.WriteLine("7.Autorii cei mai cautati (top 5).");
+            Console.WriteLine("8.Genurile cele mai solicitate (top 5).");
+            Console.WriteLine("9.Review-urile pentru o anumita carte.");
+            Console.WriteLine("10.Adaugare cititor");
+            Console.WriteLine("11.Query direct");
+            Console.WriteLine("00.Iesire.");
         }
         public DateTime CheckIfIsDate(string input)
         {
