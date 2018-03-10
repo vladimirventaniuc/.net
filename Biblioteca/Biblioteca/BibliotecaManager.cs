@@ -10,6 +10,7 @@ namespace Biblioteca.API
 {
     public class BibliotecaManager : IBibliotecaManager
     {
+
         private static BTESTEntities dbContext;
         UiHelp Ui = new UiHelp();
         private bool isTesting = false;
@@ -688,6 +689,7 @@ namespace Biblioteca.API
             }
         }
 
+        // nu sunt necesare
         public IQueryable<object> SeeIfAllBooksWithATitle(string titlu)
         {
             DbSet<IMPRUMUT> borrows = dbContext.IMPRUMUT;
