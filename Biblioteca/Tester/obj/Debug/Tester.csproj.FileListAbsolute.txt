@@ -10,3 +10,5 @@ C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.csprojRes
 C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.csproj.CoreCompileInputs.cache
 C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.exe
 C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\obj\Debug\Tester.pdb
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\stefan.jora\Documents\.net\Biblioteca\Tester\bin\Debug\EntityFramework.SqlServer.xml

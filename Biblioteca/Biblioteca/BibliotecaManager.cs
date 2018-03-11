@@ -22,9 +22,9 @@ namespace Biblioteca.API
             bool ok = true;
             Ui.ConsoleShow("***...Start...***");
             Ui.Options();
-            string option = Ui.ConsoleRead();
             while (ok)
             {
+                string option = Ui.ConsoleRead();
                 switch (option)
                 {
                     #region Lista de optiuni
